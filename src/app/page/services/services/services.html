@@ -1,0 +1,355 @@
+<div id="inner_banner" class="section inner_banner_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="full">
+          <div class="title-holder">
+            <div class="title-holder-cell text-left">
+              <h1 class="page-title">{{ 'services.page_title' | translate }}</h1>
+              <ol class="breadcrumb">
+                <li><a routerLink="/">{{ 'services.breadcrumb_home' | translate }}</a></li>
+                <li class="active">{{ 'services.breadcrumb_active' | translate }}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="mg-pricing-section">
+  <div class="container">
+    <div class="mg-pricing-header">
+      <h2>{{ 'services.main_title' | translate }}</h2>
+      <p>{{ 'services.main_subtitle' | translate }}</p>
+      <div class="mg-pricing-underline"></div>
+    </div>
+
+    <div class="mg-tabs">
+      <button class="mg-tab-btn active" data-tab="cameras">{{ 'services.tab_cameras' | translate }}</button>
+      <button class="mg-tab-btn" data-tab="smarthome">{{ 'services.tab_smarthome' | translate }}</button>
+      <button class="mg-tab-btn" data-tab="tv">{{ 'services.tab_tv' | translate }}</button>
+      <button class="mg-tab-btn" data-tab="network">{{ 'services.tab_network' | translate }}</button>
+      <button class="mg-tab-btn" data-tab="support">{{ 'services.tab_support' | translate }}</button>
+    </div>
+
+    <!-- PANEL: Security Cameras -->
+    <div class="mg-panel active" id="tab-cameras">
+      <div class="mg-pricing-grid">
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mg-card-icon">📷</div>
+          <p class="mg-card-title">{{ 'services.cam1_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.cam1_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.cam1_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.cam1_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.cam1_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam1_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam1_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam1_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="mg-popular-badge">{{ 'services.most_popular' | translate }}</div>
+          <div class="mg-card-icon">🎥</div>
+          <p class="mg-card-title">{{ 'services.cam2_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.cam2_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.cam2_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.cam2_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.cam2_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam2_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam2_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam2_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam2_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="mg-card-icon">🏢</div>
+          <p class="mg-card-title">{{ 'services.cam3_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.cam3_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.cam3_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.cam3_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.cam3_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam3_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam3_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam3_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.cam3_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: Smart Home -->
+    <div class="mg-panel" id="tab-smarthome">
+      <div class="mg-pricing-grid">
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mg-card-icon">💡</div>
+          <p class="mg-card-title">{{ 'services.sh1_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.sh1_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.sh1_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.sh1_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.sh1_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh1_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh1_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh1_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="mg-popular-badge">{{ 'services.most_popular' | translate }}</div>
+          <div class="mg-card-icon">🏠</div>
+          <p class="mg-card-title">{{ 'services.sh2_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.sh2_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.sh2_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.sh2_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.sh2_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh2_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh2_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh2_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh2_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="mg-card-icon">🔒</div>
+          <p class="mg-card-title">{{ 'services.sh3_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.sh3_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.sh3_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.sh3_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.sh3_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh3_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh3_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh3_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sh3_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: TV Mounting -->
+    <div class="mg-panel" id="tab-tv">
+      <div class="mg-pricing-grid">
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mg-card-icon">📺</div>
+          <p class="mg-card-title">{{ 'services.tv1_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.tv1_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.tv1_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.tv1_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.tv1_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv1_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv1_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv1_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="mg-popular-badge">{{ 'services.most_popular' | translate }}</div>
+          <div class="mg-card-icon">🎬</div>
+          <p class="mg-card-title">{{ 'services.tv2_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.tv2_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.tv2_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.tv2_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.tv2_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv2_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv2_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv2_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv2_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="mg-card-icon">🖨️</div>
+          <p class="mg-card-title">{{ 'services.tv3_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.tv3_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.tv3_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.tv3_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.tv3_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv3_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv3_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.tv3_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: Network & WiFi -->
+    <div class="mg-panel" id="tab-network">
+      <div class="mg-pricing-grid">
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mg-card-icon">📶</div>
+          <p class="mg-card-title">{{ 'services.net1_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.net1_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.net1_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.net1_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.net1_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net1_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net1_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net1_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="mg-popular-badge">{{ 'services.most_popular' | translate }}</div>
+          <div class="mg-card-icon">🌐</div>
+          <p class="mg-card-title">{{ 'services.net2_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.net2_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.net2_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.net2_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.net2_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net2_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net2_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net2_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net2_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="mg-card-icon">🖥️</div>
+          <p class="mg-card-title">{{ 'services.net3_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.net3_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.net3_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.net3_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.net3_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net3_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net3_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net3_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.net3_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL: IT Support -->
+    <div class="mg-panel" id="tab-support">
+      <div class="mg-pricing-grid">
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mg-card-icon">🔧</div>
+          <p class="mg-card-title">{{ 'services.sup1_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.sup1_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.sup1_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.sup1_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.sup1_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup1_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup1_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup1_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="mg-popular-badge">{{ 'services.best_value' | translate }}</div>
+          <div class="mg-card-icon">🛡️</div>
+          <p class="mg-card-title">{{ 'services.sup2_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.sup2_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.sup2_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.sup2_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.sup2_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup2_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup2_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup2_f4' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup2_f5' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+        <div class="mg-price-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="mg-card-icon">💻</div>
+          <p class="mg-card-title">{{ 'services.sup3_title' | translate }}</p>
+          <p class="mg-card-subtitle">{{ 'services.sup3_sub' | translate }}</p>
+          <div class="mg-price-row">
+            <span class="mg-price-from">{{ 'services.starting_at' | translate }}</span>
+            <span class="mg-price-amount">{{ 'services.sup3_price' | translate }}</span>
+          </div>
+          <p class="mg-price-range">{{ 'services.sup3_range' | translate }}</p>
+          <hr class="mg-divider">
+          <ul class="mg-features">
+            <li><span class="mg-check"></span>{{ 'services.sup3_f1' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup3_f2' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup3_f3' | translate }}</li>
+            <li><span class="mg-check"></span>{{ 'services.sup3_f4' | translate }}</li>
+          </ul>
+          <a routerLink="/contact" class="mg-cta-btn">{{ 'services.get_estimate' | translate }}</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mg-pricing-note">
+      {{ 'services.pricing_note' | translate }}<br>
+      <a routerLink="/contact">{{ 'services.contact_link' | translate }}</a> {{ 'services.pricing_note2' | translate }}
+    </p>
+  </div>
+</section>

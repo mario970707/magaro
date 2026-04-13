@@ -1,0 +1,65 @@
+// Solo estilos del selector de idioma, sin tocar el menú
+.lang-selector-en,
+.lang-selector-es {
+  .lang-btn {
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+
+    &.active-lang {
+      font-weight: 700;
+      color: #0099cc;
+    }
+
+    img {
+      width: 20px;
+      height: auto;
+    }
+  }
+}
+
+.lang-divider-li {
+  display: inline-flex !important;
+  align-items: center;
+  color: #999;
+  padding: 0 2px;
+}
+
+.first-ul li a {
+  white-space: nowrap;
+}
+
+.lang-selector-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 15px;
+
+  .lang-btn {
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+
+    &.active-lang {
+      font-weight: 700;
+      color: #0099cc;
+    }
+
+    img {
+      width: 20px;
+      height: auto;
+    }
+  }
+
+  .lang-divider {
+    color: #999;
+  }
+}

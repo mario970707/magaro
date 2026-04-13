@@ -1,0 +1,152 @@
+<header id="default_header" class="header_style_1">
+  <!-- header top -->
+  <div class="header_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="full">
+            <div class="topbar-left">
+              <ul class="list-inline">
+                <li>
+                  <span class="topbar-label"><i class="fa fa-home"></i></span>
+                  <span class="topbar-hightlight">423 NE 23rd St, MIAMI, FL 33137</span>
+                </li>
+                <li>
+                  <span class="topbar-label"><i class="fa fa-envelope-o"></i></span>
+                  <span class="topbar-hightlight">
+                    <a href="mailto:mario97.galban@gmail.com">mario97.galban@gmail.com</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 right_section_header_top">
+          <div class="float-left">
+            <div class="social_icon">
+              <ul class="list-inline">
+                <li>
+                  <a
+                    class="fa fa-linkedin"
+                    href="https://www.linkedin.com"
+                    title="LinkedIn"
+                    target="_blank"
+                    rel="noopener"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    class="fa fa-instagram"
+                    href="https://www.instagram.com"
+                    title="Instagram"
+                    target="_blank"
+                    rel="noopener"
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="float-right">
+            <div class="make_appo">
+              <a
+                class="btn white_btn"
+                href="https://wa.me/17865597372?text=Hello!%20I%20would%20like%20to%20schedule%20an%20appointment%20with%20Magaro%20Fix%20It%20Service.%20%0AHola!%20Me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20Magaro%20Fix%20It%20Service."
+                target="_blank"
+                rel="noopener"
+                >{{ 'header.make_appointment' | translate }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end header top -->
+
+  <!-- header bottom -->
+  <div class="header_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+          <!-- logo start -->
+          <div class="logo">
+            <a routerLink="/">
+              <img src="assets/images/logos/it_logo.png" alt="logo" />
+            </a>
+          </div>
+          <!-- logo end -->
+        </div>
+
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+          <!-- menu start -->
+          <div class="menu_side">
+            <div id="navbar_menu" class="">
+              <ul class="first-ul" style="display: block">
+                <li >
+                  <a
+                    routerLink="/"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >{{ 'nav.home' | translate }}</a
+                  >
+                </li>
+
+                <li>
+                  <a routerLink="/about" routerLinkActive="active">{{ 'nav.about' | translate }}</a>
+                </li>
+
+                <li class="has-sub">
+                  <span class="submenu-button"></span>
+                  <a routerLink="/services" routerLinkActive="active">{{
+                    'nav.services' | translate
+                  }}</a>
+                  <ul style="display: block">
+                    <li>
+                      <a routerLink="/services/services">{{
+                        'nav.services_pricing' | translate
+                      }}</a>
+                    </li>
+                    <!-- <li>
+                      <a routerLink="/services/products">{{ 'nav.products' | translate }}</a>
+                    </li> -->
+                  </ul>
+                </li>
+
+                <li >
+                  <a routerLink="/contact" routerLinkActive="active">{{
+                    'nav.contact' | translate
+                  }}</a>
+                </li>
+
+                <!-- SELECTOR DE IDIOMA -->
+                <li class="lang-selector-en">
+                  <a
+                    (click)="switchLang('en')"
+                    [class.active-lang]="currentLang === 'en'"
+                    class="lang-btn"
+                  >
+                    <img src="https://flagcdn.com/w20/us.png" alt="EN" /> EN
+                  </a>
+                </li>
+
+                <li class="lang-selector-es">
+                  <a
+                    (click)="switchLang('es');$event.stopPropagation()"
+                    [class.active-lang]="currentLang === 'es'"
+                    class="lang-btn"
+                  >
+                    <img src="https://flagcdn.com/w20/es.png" alt="ES" /> ES
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- menu end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header bottom end -->
+</header>

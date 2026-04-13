@@ -1,0 +1,137 @@
+<!-- Banner -->
+<div id="inner_banner" class="section inner_banner_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="full">
+          <div class="title-holder">
+            <div class="title-holder-cell text-left">
+              <h1 class="page-title">{{ currentLang === 'es' ? 'Productos' : 'Our Products' }}</h1>
+              <ol class="breadcrumb">
+                <li><a routerLink="/">{{ currentLang === 'es' ? 'Inicio' : 'Home' }}</a></li>
+                <li class="active">{{ currentLang === 'es' ? 'Productos' : 'Products' }}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Button flotante -->
+<div class="cart-floating-btn" (click)="toggleCart()">
+  🛒
+  <span class="cart-count" *ngIf="cartService.totalItems() > 0">{{ cartService.totalItems() }}</span>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="cart-sidebar" [class.open]="showCart()">
+  <div class="cart-header">
+    <h3>{{ currentLang === 'es' ? 'Tu Carrito' : 'Your Cart' }}</h3>
+    <button class="cart-close" (click)="toggleCart()">✕</button>
+  </div>
+  <div class="cart-body">
+    <div *ngIf="cartService.cartItems().length === 0" class="cart-empty">
+      <p>{{ currentLang === 'es' ? 'Tu carrito está vacío' : 'Your cart is empty' }}</p>
+    </div>
+    <div *ngFor="let item of cartService.cartItems()" class="cart-item">
+      <img [src]="item.product.image" [alt]="item.product.name">
+      <div class="cart-item-info">
+        <p class="cart-item-name">{{ currentLang === 'es' ? item.product.nameEs : item.product.name }}</p>
+        <p class="cart-item-price">${{ item.product.price }}</p>
+        <div class="cart-item-qty">
+          <button (click)="cartService.updateQuantity(item.product.id, item.quantity - 1)">−</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="cartService.updateQuantity(item.product.id, item.quantity + 1)">+</button>
+          <button class="remove-btn" (click)="cartService.removeFromCart(item.product.id)">🗑</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-footer" *ngIf="cartService.cartItems().length > 0">
+    <div class="cart-total">
+      <strong>Total: ${{ cartService.totalPrice().toFixed(2) }}</strong>
+    </div>
+    <a href="https://wa.me/17865597372?text=Hello!%20I%20would%20like%20to%20order%20products%20from%20Magaro%20Fix%20It%20Service."
+       target="_blank" class="btn main_bt" style="width:100%; text-align:center; display:block; margin-top:10px;">
+      {{ currentLang === 'es' ? 'Ordenar por WhatsApp' : 'Order via WhatsApp' }} 💬
+    </a>
+    <button class="btn" style="width:100%; margin-top:8px; background:#eee;" (click)="cartService.clearCart()">
+      {{ currentLang === 'es' ? 'Vaciar carrito' : 'Clear cart' }}
+    </button>
+  </div>
+</div>
+<div class="cart-overlay" *ngIf="showCart()" (click)="toggleCart()"></div>
+
+<!-- Shop Section -->
+<div class="section padding_layout_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main_heading text_align_center">
+          <h2>{{ currentLang === 'es' ? 'Nuestros Productos' : 'Our Products' }}</h2>
+          <p class="large">{{ currentLang === 'es' ? 'Productos que instalamos y recomendamos para tu hogar o negocio.' : 'Products we install and recommend for your home or business.' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="shop-categories">
+          <button *ngFor="let cat of categories"
+            class="shop-cat-btn"
+            [class.active]="selectedCategory() === cat.id"
+            (click)="setCategory(cat.id)">
+            {{ currentLang === 'es' ? cat.labelEs : cat.label }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="row" style="margin-top: 30px;">
+      <div *ngFor="let product of filteredProducts()"
+        class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin_bottom_30_all">
+        <div class="product_list shop-card">
+          <div class="product_img">
+            <img class="img-responsive" [src]="product.image" [alt]="product.name"
+                 onerror="this.src='assets/images/it_service/i1.png'">
+            <div class="product-badge" *ngIf="product.badge">{{ product.badge }}</div>
+          </div>
+          <div class="product_detail_btm">
+            <div class="center">
+              <h4>{{ currentLang === 'es' ? product.nameEs : product.name }}</h4>
+            </div>
+            <div class="starratin">
+              <div class="center">
+                <i *ngFor="let s of getStars(product.rating)" class="fa fa-star"></i>
+                <i *ngFor="let s of getEmptyStars(product.rating)" class="fa fa-star-o"></i>
+              </div>
+            </div>
+            <div class="product_price">
+              <p><span class="new_price">${{ product.price }}</span></p>
+            </div>
+            <div class="center" style="margin-top: 5px;">
+              <button class="btn main_bt shop-add-btn"
+                (click)="addToCart(product)"
+                [class.added]="addedProductId() === product.id">
+                {{ addedProductId() === product.id
+                  ? (currentLang === 'es' ? '✅ Agregado' : '✅ Added!')
+                  : (currentLang === 'es' ? '🛒 Agregar' : '🛒 Add to Cart') }}
+              </button>
+         
+            </div>
+                 <div class="center" style="margin-top: 5px; margin-bottom: 15px;" *ngIf="product.amazonUrl">
+                    <a [href]="product.amazonUrl" target="_blank" rel="noopener"
+                      class="btn amazon-btn">
+                      🛒 {{ currentLang === 'es' ? 'Ver en Amazon' : 'View on Amazon' }}
+                    </a>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
