@@ -63,3 +63,17 @@
     color: #999;
   }
 }
+
+@media (max-width: 991px) {
+  header#default_header #menu-button {
+    position: fixed !important;
+    right: 15px !important;
+    top: 15px !important;
+    left: auto !important;
+    z-index: 9999 !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+  }
+}

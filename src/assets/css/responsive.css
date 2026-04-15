@@ -1438,6 +1438,8 @@
    
 }
 
+
+
 @media (max-width:574px) {
 	/**== header ==**/
 	.header_top ul {
@@ -1761,3 +1763,9 @@ footer.footer_style_2 div.col-md-3 {
 }
 }
 
+@media (max-width:450px) {
+		.logo img {
+		width: 250px !important;
+		margin-left: 50px;
+	}
+}
