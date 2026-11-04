@@ -15,7 +15,22 @@ declare const jQuery: any;
 export class Navbar implements AfterViewInit {
   currentLang = 'en';
 
-  constructor(private router: Router, private translate: TranslateService) {}
+  theme: 'dark' | 'light' = 'dark';
+
+  constructor(private router: Router, private translate: TranslateService) {
+    try {
+      if (localStorage.getItem('sh-theme') === 'light') this.theme = 'light';
+    } catch {}
+    document.documentElement.setAttribute('data-theme', this.theme);
+  }
+
+  toggleTheme() {
+    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', this.theme);
+    try {
+      localStorage.setItem('sh-theme', this.theme);
+    } catch {}
+  }
 
   switchLang(lang: string) {
     this.currentLang = lang;

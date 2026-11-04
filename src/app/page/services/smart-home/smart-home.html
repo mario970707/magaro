@@ -1,1 +1,104 @@
-<p>smart-home works!</p>
+<main class="sh-page">
+  <div class="sh-pagehead sh-wrap">
+    <span class="sh-eyebrow">{{ 'smart.eyebrow' | translate }}</span>
+    <h1>{{ 'smart.title' | translate }}</h1>
+    <p>{{ 'smart.intro' | translate }}</p>
+  </div>
+
+  <section class="sh-section">
+    <div class="sh-wrap sh-split">
+      <img class="sh-img" src="assets/images/smart-home/p-cortinas.jpg" alt="" data-aos="fade-up" data-aos-once="true">
+      <div data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">{{ 'smart.what_eyebrow' | translate }}</span>
+        <h2>{{ 'smart.what_title' | translate }}</h2>
+        <p>{{ 'smart.what_text' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-section sh-section--alt">
+    <div class="sh-wrap">
+      <div class="sh-head" data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">{{ 'smart.change_eyebrow' | translate }}</span>
+        <h2>{{ 'smart.change_title' | translate }}</h2>
+      </div>
+      <div class="sh-change">
+        @for (n of changes; track n) {
+          <div data-aos="fade-up" data-aos-once="true">
+            <h3>{{ 'smart.change' + n + '_title' | translate }}</h3>
+            <p>{{ 'smart.change' + n + '_before' | translate }}</p>
+            <p>{{ 'smart.change' + n + '_after' | translate }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-section">
+    <div class="sh-wrap">
+      <div class="sh-head" data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">{{ 'smart.stats_eyebrow' | translate }}</span>
+        <h2>{{ 'smart.stats_title' | translate }}</h2>
+      </div>
+      <div class="sh-grid sh-grid--3">
+        <div class="sh-tile sh-stat" data-aos="fade-up" data-aos-once="true">
+          <strong>40%+</strong><p>{{ 'smart.stat1' | translate }}</p>
+          <a href="https://www.cepro.com/news/30-of-u-s-homes-have-at-least-3-smart-home-devices-as-adoption-grows/125531" target="_blank" rel="noopener">Parks Associates, 2023</a>
+        </div>
+        <div class="sh-tile sh-stat" data-aos="fade-up" data-aos-once="true" data-aos-delay="80">
+          <strong>7.1</strong><p>{{ 'smart.stat2' | translate }}</p>
+          <a href="https://www.cepro.com/news/30-of-u-s-homes-have-at-least-3-smart-home-devices-as-adoption-grows/125531" target="_blank" rel="noopener">Parks Associates, 2023</a>
+        </div>
+        <div class="sh-tile sh-stat" data-aos="fade-up" data-aos-once="true" data-aos-delay="160">
+          <strong>~8%</strong><p>{{ 'smart.stat3' | translate }}</p>
+          <a href="https://www.energystar.gov/products/heating_cooling/smart_thermostats/smart_thermostat_faq" target="_blank" rel="noopener">ENERGY STAR</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-section sh-section--alt">
+    <div class="sh-wrap sh-split">
+      <div data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">Home Assistant</span>
+        <h2>{{ 'smart.ha_title' | translate }}</h2>
+        <p>{{ 'smart.ha_text' | translate }}</p>
+      </div>
+      <div class="sh-grid" data-aos="fade-up" data-aos-once="true" data-aos-delay="100">
+        @for (n of [1, 2, 3]; track n) {
+          <div class="sh-tile">
+            <h3>{{ 'smart.ha' + n + '_title' | translate }}</h3>
+            <p>{{ 'smart.ha' + n + '_text' | translate }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-section">
+    <div class="sh-wrap">
+      <div class="sh-head" data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">FAQ</span>
+        <h2>{{ 'smart.faq_title' | translate }}</h2>
+      </div>
+      <div class="sh-faq">
+        @for (n of faqs; track n) {
+          <details>
+            <summary>{{ 'smart.faq' + n + '_q' | translate }}</summary>
+            <p>{{ 'smart.faq' + n + '_a' | translate }}</p>
+          </details>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-section sh-section--tight">
+    <div class="sh-wrap">
+      <div class="sh-cta-box" data-aos="fade-up" data-aos-once="true">
+        <h2>{{ 'home.cta_title' | translate }}</h2>
+        <p>{{ 'home.cta_desc' | translate }}</p>
+        <a class="sh-cta" routerLink="/services">{{ 'smart.cta' | translate }} <span class="sh-cta__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>

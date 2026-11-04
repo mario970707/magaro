@@ -9,12 +9,12 @@
               <ul class="list-inline">
                 <li>
                   <span class="topbar-label"><i class="fa fa-home"></i></span>
-                  <span class="topbar-hightlight">423 NE 23rd St, MIAMI, FL 33137</span>
+                  <span class="topbar-hightlight">Miami, FL</span>
                 </li>
                 <li>
                   <span class="topbar-label"><i class="fa fa-envelope-o"></i></span>
                   <span class="topbar-hightlight">
-                    <a href="mailto:mario97.galban@gmail.com">mario97.galban@gmail.com</a>
+                    <a href="mailto:infomagaro@gmail.com">infomagaro@gmail.com</a>
                   </span>
                 </li>
               </ul>
@@ -94,30 +94,32 @@
                 </li>
 
                 <li>
-                  <a routerLink="/about" routerLinkActive="active">{{ 'nav.about' | translate }}</a>
+                  <a routerLink="/services/smart-home" routerLinkActive="active">{{ 'nav.smart_home' | translate }}</a>
                 </li>
 
-                <li class="has-sub">
-                  <span class="submenu-button"></span>
-                  <a routerLink="/services" routerLinkActive="active">{{
-                    'nav.services' | translate
+                <li>
+                  <a routerLink="/services" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{
+                    'nav.services_pricing' | translate
                   }}</a>
-                  <ul style="display: block">
-                    <li>
-                      <a routerLink="/services/services">{{
-                        'nav.services_pricing' | translate
-                      }}</a>
-                    </li>
-                    <!-- <li>
-                      <a routerLink="/services/products">{{ 'nav.products' | translate }}</a>
-                    </li> -->
-                  </ul>
+                </li>
+
+                <li>
+                  <a routerLink="/about" routerLinkActive="active">{{ 'nav.about' | translate }}</a>
                 </li>
 
                 <li >
                   <a routerLink="/contact" routerLinkActive="active">{{
                     'nav.contact' | translate
                   }}</a>
+                </li>
+
+                <!-- BOTÓN CLARO / OSCURO -->
+                <li class="theme-selector">
+                  <button type="button" class="theme-btn" (click)="toggleTheme()"
+                    [attr.aria-label]="(theme === 'dark' ? 'nav.theme_light' : 'nav.theme_dark') | translate"
+                    [attr.title]="(theme === 'dark' ? 'nav.theme_light' : 'nav.theme_dark') | translate">
+                    <i class="fa" [class.fa-sun-o]="theme === 'dark'" [class.fa-moon-o]="theme === 'light'" aria-hidden="true"></i>
+                  </button>
                 </li>
 
                 <!-- SELECTOR DE IDIOMA -->

@@ -1,141 +1,72 @@
-<div id="inner_banner" class="section inner_banner_section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="full">
-          <div class="title-holder">
-            <div class="title-holder-cell text-left">
-              <h1 class="page-title">{{ 'about.page_title' | translate }}</h1>
-              <ol class="breadcrumb">
-                <li><a routerLink="/">{{ 'about.breadcrumb_home' | translate }}</a></li>
-                <li class="active">{{ 'about.breadcrumb_active' | translate }}</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<main class="sh-page">
+  <div class="sh-pagehead sh-wrap">
+    <span class="sh-eyebrow">{{ 'about.eyebrow' | translate }}</span>
+    <h1>{{ 'about.title' | translate }}</h1>
   </div>
-</div>
 
-<div class="section padding_layout_1">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="full">
-          <div class="main_heading text_align_center">
-            <h2>{{ 'about.main_title' | translate }}</h2>
-            <p class="large">{{ 'about.main_subtitle' | translate }}</p>
+  <section class="sh-section sh-section--tight">
+    <div class="sh-wrap">
+      <span class="sh-eyebrow">{{ 'about.mission_label' | translate }}</span>
+      <p class="sh-mission" data-aos="fade-up" data-aos-once="true">{{ 'about.mission' | translate }}</p>
+      <br><br>
+      <span class="sh-eyebrow">{{ 'about.vision_label' | translate }}</span>
+      <p class="sh-mission" data-aos="fade-up" data-aos-once="true">{{ 'about.vision' | translate }}</p>
+    </div>
+  </section>
+
+  <section class="sh-section sh-section--alt">
+    <div class="sh-wrap sh-split sh-split--flip">
+      <div data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">{{ 'about.what_eyebrow' | translate }}</span>
+        <h2>{{ 'about.what_title' | translate }}</h2>
+        <p>{{ 'about.what_text' | translate }}</p>
+        <ul class="sh-checks">
+          @for (n of [1, 2, 3]; track n) {
+            <li><i class="fa fa-check" aria-hidden="true"></i>{{ 'about.check' + n | translate }}</li>
+          }
+        </ul>
+      </div>
+      <img class="sh-img" src="assets/images/smart-home/about-instalacion.jpg" alt="" data-aos="fade-up" data-aos-once="true">
+    </div>
+    <div class="sh-wrap sh-split">
+      <img class="sh-img" src="assets/images/smart-home/about-carro.jpg" alt="" data-aos="fade-up" data-aos-once="true">
+      <div data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">{{ 'about.story_eyebrow' | translate }}</span>
+        <h2>{{ 'about.story_title' | translate }}</h2>
+        <p>{{ 'about.story_text' | translate }}</p>
+        <ul class="sh-checks">
+          @for (n of [4, 5, 6]; track n) {
+            <li><i class="fa fa-check" aria-hidden="true"></i>{{ 'about.check' + n | translate }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sh-section">
+    <div class="sh-wrap">
+      <div class="sh-head" data-aos="fade-up" data-aos-once="true">
+        <span class="sh-eyebrow">{{ 'about.values_eyebrow' | translate }}</span>
+        <h2>{{ 'about.values_title' | translate }}</h2>
+      </div>
+      <div class="sh-grid sh-grid--3">
+        @for (n of [1, 2, 3]; track n) {
+          <div class="sh-tile" data-aos="fade-up" data-aos-once="true" [attr.data-aos-delay]="n * 70">
+            <h3>{{ 'about.value' + n + '_title' | translate }}</h3>
+            <p>{{ 'about.value' + n + '_text' | translate }}</p>
           </div>
-        </div>
+        }
       </div>
     </div>
+  </section>
 
-    <div class="row about_blog">
-      <div style="padding: 50px 0 0 50px;" class="col-lg-6 col-md-6 col-sm-12 about_cont_blog" data-aos="fade-right" data-aos-delay="100">
-        <div class="full text_align_left">
-          <h3>{{ 'about.what_we_do_title' | translate }}</h3>
-          <p>{{ 'about.what_we_do_desc' | translate }}</p>
-          <ul>
-            <li><i class="fa fa-check-circle"></i> {{ 'about.check1' | translate }}</li>
-            <li><i class="fa fa-check-circle"></i> {{ 'about.check2' | translate }}</li>
-            <li><i class="fa fa-check-circle"></i> {{ 'about.check3' | translate }}</li>
-          </ul>
-        </div>
-      </div>
-      <div style="padding: 0px;" class="col-lg-6 col-md-6 col-sm-12 about_feature_img padding_right_0" data-aos="fade-left" data-aos-delay="100">
-        <div class="full text_align_center"><img class="img-responsive" src="assets/images/it_service/post2323.png" alt="#"></div>
+  <section class="sh-section sh-section--tight">
+    <div class="sh-wrap">
+      <div class="sh-cta-box" data-aos="fade-up" data-aos-once="true">
+        <h2>{{ 'home.cta_title' | translate }}</h2>
+        <p>{{ 'home.cta_desc' | translate }}</p>
+        <a class="sh-cta" routerLink="/contact">{{ 'home.hero_cta' | translate }} <span class="sh-cta__arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
-
-    <div class="row about_blog">
-      <div style="padding: 0px;" class="col-lg-6 col-md-6 col-sm-12 about_feature_img padding_right_0" data-aos="fade-right" data-aos-delay="100">
-        <div class="full text_align_center"><img class="img-responsive" src="assets/images/it_service/car.png" alt="#"></div>
-      </div>
-      <div style="padding: 50px 0 0 50px;" class="col-lg-6 col-md-6 col-sm-12 about_cont_blog" data-aos="fade-left" data-aos-delay="100">
-        <div class="full text_align_left">
-          <h3>{{ 'about.who_we_are_title' | translate }}</h3>
-          <p>{{ 'about.who_we_are_desc' | translate }}</p>
-          <ul>
-            <li><i class="fa fa-check-circle"></i> {{ 'about.check4' | translate }}</li>
-            <li><i class="fa fa-check-circle"></i> {{ 'about.check5' | translate }}</li>
-            <li><i class="fa fa-check-circle"></i> {{ 'about.check6' | translate }}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="row" style="margin-top: 35px">
-      <div class="col-md-8">
-        <div class="full margin_bottom_30">
-          <div class="accordion border_circle">
-            <div class="bs-example">
-              <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <p class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#accordion" href="#collapseOne"><i class="fa fa-camera"></i> {{ 'about.acc1_title' | translate }}<i class="fa fa-angle-down"></i></a></p>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse show">
-                    <div class="panel-body"><p>{{ 'about.acc1_desc' | translate }}</p></div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <p class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#accordion" href="#collapseTwo"><i class="fa fa-home"></i> {{ 'about.acc2_title' | translate }}<i class="fa fa-angle-down"></i></a></p>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse show">
-                    <div class="panel-body"><p>{{ 'about.acc2_desc' | translate }}</p></div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <p class="panel-title"><a aria-expanded="true" data-toggle="collapse" data-parent="#accordion" href="#collapseThreeAlt"><i class="fa fa-television"></i> {{ 'about.acc3_title' | translate }}<i class="fa fa-angle-down"></i></a></p>
-                  </div>
-                  <div id="collapseThreeAlt" class="panel-collapse collapse show">
-                    <div class="panel-body"><p>{{ 'about.acc3_desc' | translate }}</p></div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <p class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#accordion" href="#collapseThree"><i class="fa fa-wifi"></i> {{ 'about.acc4_title' | translate }}<i class="fa fa-angle-down"></i></a></p>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse show">
-                    <div class="panel-body"><p>{{ 'about.acc4_desc' | translate }}</p></div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <p class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#accordion" href="#collapseFour"><i class="fa fa-print"></i> {{ 'about.acc5_title' | translate }}<i class="fa fa-angle-down"></i></a></p>
-                  </div>
-                  <div id="collapseFour" class="panel-collapse collapse show">
-                    <div class="panel-body"><p>{{ 'about.acc5_desc' | translate }}</p></div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <p class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#accordion" href="#collapseFive"><i class="fa fa-wrench"></i> {{ 'about.acc6_title' | translate }}<i class="fa fa-angle-down"></i></a></p>
-                  </div>
-                  <div id="collapseFive" class="panel-collapse collapse show">
-                    <div class="panel-body"><p>{{ 'about.acc6_desc' | translate }}</p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="full" style="margin-top: 35px;">
-          <h3>{{ 'about.cta_title' | translate }}</h3>
-          <p>{{ 'about.cta_desc' | translate }}</p>
-          <p><a class="btn main_bt" routerLink="/contact">{{ 'about.cta_btn' | translate }}</a></p>
-        </div>
-        <div class="side_bar_blog">
-          <h4>{{ 'about.insight_title' | translate }}</h4>
-          <p>{{ 'about.insight1' | translate }}</p>
-          <p>{{ 'about.insight2' | translate }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  </section>
+</main>
