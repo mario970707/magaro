@@ -4,7 +4,7 @@
   <div class="sh-hero__stage" #stage>
     @for (slide of slides; track slide.img; let i = $index) {
       <article class="sh-slide" [class.is-active]="active() === i" [attr.aria-hidden]="active() !== i">
-        <div class="sh-slide__img" [class.sh-slide__img--blue]="slide.blue" [style.background-image]="'url(' + slide.img + ')'"></div>
+        <div class="sh-slide__img" [class.sh-slide__img--blue]="slide.blue" [style.background-image]="'url(' + slide.img + ')'" [style.background-position]="slide.pos"></div>
         <div class="sh-slide__shade"></div>
         <div class="sh-copy">
           <h1 class="sh-copy__title">
@@ -66,7 +66,7 @@
     <div class="sh-prod" data-aos="fade-up" data-aos-once="true">
       @for (item of products; track item.key; let i = $index) {
         <div class="sh-prod__item" [attr.data-state]="prodState(i)" [style.--i]="prodPos(i)"
-          [style.background-image]="'url(' + item.img + ')'" (click)="goProduct(i)">
+          [style.background-image]="'url(' + item.img + ')'" [style.background-position]="item.pos" (click)="goProduct(i)">
           <span class="sh-prod__label">{{ 'home.' + item.key + '_title' | translate }}</span>
           <div class="sh-prod__copy">
             <h3>{{ 'home.' + item.key + '_title' | translate }}</h3>

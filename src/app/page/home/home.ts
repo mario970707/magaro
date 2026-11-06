@@ -13,10 +13,10 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   // Fotos y textos del carrusel. Para cambiar una foto, cambia solo "img".
   slides = [
-    { img: 'assets/images/smart-home/hero-1.jpg', key: 'home.hero1', blue: false },
-    { img: 'assets/images/smart-home/hero-2.jpg', key: 'home.hero2', blue: false },
-    { img: 'assets/images/smart-home/hero-3-temporal.jpg', key: 'home.hero3', blue: true },
-    { img: 'assets/images/smart-home/hero-4.jpg', key: 'home.hero4', blue: false },
+    { img: 'assets/images/smart-home/hero-1.jpg', key: 'home.hero1', blue: false, pos: '82% 12%' },
+    { img: 'assets/images/smart-home/hero-2.jpg', key: 'home.hero2', blue: false, pos: 'center' },
+    { img: 'assets/images/smart-home/hero-3.jpg', key: 'home.hero3', blue: false, pos: 'center' },
+    { img: 'assets/images/smart-home/hero-4.jpg', key: 'home.hero4', blue: false, pos: 'center' },
   ];
   active = signal(0);
 
@@ -31,14 +31,14 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
 
   // Carrusel de productos. Para cambiar una foto, cambia solo "img".
   products = [
-    { key: 'prod1', img: 'assets/images/smart-home/p-voz-temporal.jpg' },
-    { key: 'prod2', img: 'assets/images/smart-home/p-cerradura-temporal.jpg' },
-    { key: 'prod3', img: 'assets/images/smart-home/p-luces.jpg' },
-    { key: 'prod4', img: 'assets/images/smart-home/p-termostato-temporal.jpg' },
-    { key: 'prod5', img: 'assets/images/smart-home/p-cortinas.jpg' },
-    { key: 'prod6', img: 'assets/images/smart-home/p-camara-temporal.jpg' },
-    { key: 'prod7', img: 'assets/images/smart-home/p-sensores-temporal.jpg' },
-    { key: 'prod8', img: 'assets/images/smart-home/p-panel-temporal.jpg' },
+    { key: 'prod1', img: 'assets/images/smart-home/p-voz.jpg', pos: '12% center' },
+    { key: 'prod2', img: 'assets/images/smart-home/p-cerradura.jpg', pos: '82% center' },
+    { key: 'prod3', img: 'assets/images/smart-home/p-luces.jpg', pos: 'center' },
+    { key: 'prod4', img: 'assets/images/smart-home/p-termostato.jpg', pos: '40% center' },
+    { key: 'prod5', img: 'assets/images/smart-home/p-cortinas.jpg', pos: 'center 55%' },
+    { key: 'prod6', img: 'assets/images/smart-home/p-camara.jpg', pos: '88% center' },
+    { key: 'prod7', img: 'assets/images/smart-home/p-sensores.jpg', pos: 'center' },
+    { key: 'prod8', img: 'assets/images/smart-home/p-panel.jpg', pos: '45% center' },
   ];
   prodActive = signal(0);
 

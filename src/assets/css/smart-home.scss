@@ -250,6 +250,10 @@ body { background: var(--sh-bg); }
   }
 }
 
+// Primera foto: sin zoom para que el panel de la derecha no se corte
+.sh-slide:first-of-type .sh-slide__img { inset: -1%; }
+.sh-slide:first-of-type.is-active .sh-slide__img { animation: none; }
+
 @keyframes sh-zoom {
   from { scale: 1; }
   to { scale: 1.07; }
@@ -362,9 +366,9 @@ $line: var(--sh-line);
 // ===== Carrusel de productos =====
 .sh-prod {
   position: relative;
-  width: calc(100% - 32px);
-  height: min(calc(100vh - 40px), 760px);
-  min-height: 600px;
+  width: min(calc(100% - 32px), 1320px);
+  height: min(calc(100vh - 40px), 700px);
+  min-height: 560px;
   margin: 0 auto;
   border-radius: 28px;
   overflow: hidden;
@@ -379,7 +383,6 @@ $line: var(--sh-line);
   width: 180px;
   height: 270px;
   border-radius: 18px;
-  background-position: center;
   background-size: cover;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
   cursor: pointer;
@@ -422,7 +425,7 @@ $line: var(--sh-line);
 // ===== Escena =====
 .sh-scene { position: relative; background: #000; }
 .sh-scene__sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; }
-.sh-scene__bg { position: absolute; inset: 0; background: url('/assets/images/smart-home/hero-1.jpg') center / cover; transition: opacity 1s ease; }
+.sh-scene__bg { position: absolute; inset: 0; background: url('/assets/images/smart-home/hero-3.jpg') center / cover; transition: opacity 1s ease; }
 .sh-scene__sticky::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba($navy, 0.82), rgba($navy, 0.25) 62%, transparent); }
 .sh-scene__inner { position: relative; z-index: 1; width: min(1200px, 100%); margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
 .sh-scene__text { position: relative; min-height: 340px; }
@@ -521,6 +524,9 @@ $line: var(--sh-line);
   p { max-width: 620px; margin-bottom: 28px; }
 }
 
+// iPhone: mantiene visibles los bloques de texto sin animación
+.sh-pagehead, .sh-toggle, .sh-tier-note, .sh-faq { position: relative; z-index: 1; transform: translateZ(0); }
+
 // ===== Encabezado de páginas interiores =====
 .sh-pagehead { padding: 80px 24px 40px; h1 { margin: 0 0 16px; font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; } p { max-width: 720px; font-size: 18px; } }
 
@@ -534,7 +540,7 @@ $line: var(--sh-line);
 .sh-addons { display: grid; grid-template-columns: 1fr 1fr; column-gap: 56px; }
 
 // ===== Smart Home / About =====
-.sh-img { width: 100%; height: 520px; object-fit: cover; border-radius: 24px; }
+.sh-img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; }
 .sh-stat strong { display: block; margin-bottom: 8px; color: var(--sh-accent); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; line-height: 1; }
 .sh-stat a { display: inline-block; margin-top: 12px; font-size: 13px; }
 .sh-change { border-top: 1px solid $line; > div { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid $line; } h3 { margin: 0; font-size: 17px; } p { font-size: 15px; } p:last-child { color: var(--sh-text); } }
@@ -633,10 +639,22 @@ app-contact {
 @media (max-width: 767px) {
   .sh-grid--3, .sh-grid--4, .sh-steps, .sh-addons, .sh-compare { grid-template-columns: 1fr; }
   .sh-tile { padding: 24px; }
-  .sh-prod { min-height: 620px; height: calc(100vh - 20px); width: calc(100% - 20px); border-radius: 20px; }
-  .sh-prod__item { top: 72px; left: calc(14px + (var(--i) - 1) * 94px); width: 84px; height: 106px; border-radius: 12px; }
+  // Celular: foto arriba, miniaturas debajo y texto al final
+  .sh-prod { --img: 62vw; width: calc(100% - 20px); height: calc(var(--img) + 136px + 165px); min-height: 0; border-radius: 20px; background: var(--sh-bg); }
+  .sh-prod__item { top: calc(var(--img) + 12px); left: calc(4px + (var(--i) - 1) * 94px); width: 84px; height: 106px; border-radius: 12px; }
+  .sh-prod__item[data-state='active'], .sh-prod__item[data-state='prev'] { height: var(--img); border-radius: 20px 20px 0 0; }
+  .sh-prod__item[data-state='active']::before, .sh-prod__item[data-state='prev']::before { display: none; }
   .sh-prod__label { left: 7px; right: 7px; bottom: 7px; font-size: 10px; }
-  .sh-prod__copy { padding: 22px; border-top-right-radius: 0; }
+  .sh-prod__copy { top: calc(var(--img) + 130px); bottom: auto; width: 100%; padding: 8px 6px 0; border-top-right-radius: 0; background: none; }
+  .sh-section { padding: 60px 0; }
+  .sh-section--tight { padding: 24px 0 60px; }
+  .sh-head { margin-bottom: 34px; }
+  // Portada: la foto usa la parte de arriba para que no se deforme el encuadre
+  .sh-slide__img { inset: -2% -2% 40% -2%; }
+  .sh-slide:first-of-type .sh-slide__img { inset: -1% -1% 40% -1%; background-position: 100% 12% !important; }
+  .sh-slide__shade { display: none; }
+  .sh-hero__stage { background: var(--sh-bg); }
+  .sh-copy { width: 100%; }
   .sh-scene__sticky { align-items: flex-start; padding-top: 22px; }
   .sh-scene__sticky::after { background: rgba($navy, 0.6); }
   .sh-scene__step p { font-size: 15px; }
@@ -644,7 +662,6 @@ app-contact {
   .sh-scene__text { min-height: 290px; }
   .sh-panel__row em { margin-top: 7px; }
   .sh-change > div { grid-template-columns: 1fr; gap: 8px; }
-  .sh-img { height: 340px; }
   .sh-pagehead { padding: 44px 24px 20px; }
   #default_header .header_top { display: none; }
 }
